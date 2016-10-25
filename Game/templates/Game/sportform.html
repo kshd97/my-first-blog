@@ -1,0 +1,100 @@
+<head>
+	{% load staticfiles %}
+    {% load static %}
+	<!-- <script type="text/javascript" src="{% static 'css/materialize/js/jquery-1.11.1.min.js' %}"></script>
+  	<script type="text/javascript" src = "{% static 'css/materialize/js/materialize.min.js' %}"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/materialize/css/materialize.min.css' %}" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" /> 
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" /> -->
+  <script type="text/javascript" src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+    <script type="text/javascript" src = "{% static 'css/materialize/js/materialize.min.js' %}"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/materialize/css/materialize.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" /> 
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/materialize/css/style.css' %}" />
+</head>
+{% load static %}
+<body>
+  <nav class="navbar navbar-fixed-top #E91c1c rgba(238,28,28,1)" role="navigation"> 
+      <div class="container">
+         </div>
+ </nav>
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <!-- <h4 class="header center white-text text-darken-2">You're Just A Step Away From</h4>
+          <h1 class="header center white-text text-darken-2">Innovating Great Things!!</h1>
+        <br><br> <br><br> <br><br>
+                  <br><br> <br><br> <br><br> <br><br> -->
+          <div class="row center">
+    <div class="row">
+    <form action="{% url 'Game:sportform' %}" method="POST" class="col s12">
+    	{% csrf_token %}
+      <div class="row">
+        <div class="input-field col s6">
+          <input name="Sport" id = "Sport" type="text" placeholder= "Sport" style="color: #000000" >
+          <!-- <label for="Starttime">Starttime</label> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input name = "City" placeholder="City" id = "City" type="text" style="color: #000000" >
+          <!-- <label for="Starttime">Starttime</label> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name = "StartTime" id = "StartTime" placeholder = "StartTime" type="text"  style="color: #000000" >
+          <!-- <label for="Starttime">Starttime</label> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name = "EndTime" id="EndTime" type="text" placeholder="EndTime" style="color: #000000">
+          <!-- <label for="Endtime">Endtime</label> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name  = "Location" id="Location" type="text" placeholder="Location" style="color: #000000">
+          <!-- <label for="Endtime">Endtime</label> -->
+        </div>
+      </div>
+       <input type="hidden" id = "u" name="u" value="{{u}}">
+      <div class = "row">
+				<div class="input-field s6">
+					<input type="submit" class=" btn green darken-4 thin-letters-3" value = "Proceed">
+				</div>
+		</div>
+    </form>
+  </div>
+        
+      </div>
+    </div>
+    <!-- <div class="parallax"><img src="{% static 'images/n1.jpg' %}" alt="Unsplashed background img 1"></div> -->
+  <!-- </div> -->
+ 
+<footer class="page-footer">
+     <div class="footer-copyright">
+      <div class="container">
+          <div class="right-align">
+      Designed by ANIB
+          </div>
+      </div>
+    </div></footer>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'css/materialize/js/materialize.js' %}"></script>
+  <script src="{% static 'css/materialize/js/init.js' %}"></script>
+
+  </body>
+</html>

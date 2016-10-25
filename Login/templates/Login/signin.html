@@ -1,0 +1,82 @@
+<head>
+  {% load staticfiles %}
+  {% load static %}
+  <!-- <script type="text/javascript" src="{% static 'css/materialize/js/jquery-1.11.1.min.js' %}"></script>
+    <script type="text/javascript" src = "{% static 'css/materialize/js/materialize.min.js' %}"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/materialize/css/materialize.min.css' %}" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" /> 
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" /> -->
+  <script type="text/javascript" src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'css/materialize/js/materialize.min.js' %}"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/materialize/css/materialize.min.css' %}" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" /> 
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/materialize/css/style.css' %}" />
+</head>
+{% load static %}
+<body>
+  <nav class="navbar navbar-fixed-top #F5F3F3" role="navigation"> 
+    <div class="container">
+    </div>
+  </nav>
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center orange-text text-lighten-2">Game On</h1>
+        <div class="row center" >
+          <form action="{% url 'Login:signin' %}" method="post" class="center">
+            {% csrf_token %}
+            <div class="row">
+              <div class="input-field col s6">
+                <input name="username" id="username" type="text" placeholder = "Username" style="color: #000000">
+                <!-- <label for="Username">User Name</label> -->
+              </div>    
+              <div class="row">
+                <div class="input-field col s6">
+                  <input name="password" id="password" type="password" placeholder="Password" style="color: #000000">
+                  <!-- <label for="password">Password</label> -->
+                </div>
+              </div>
+            </div>
+            <div class="row center">
+              <input type="submit" class=" btn green darken-4 thin-letters-3" value = "Sign in">
+            </div>
+            <div class="row center">
+              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+              <a href="/Login/lksignup">Sign Up</a>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="parallax"><img src="{% static 'images/n1.jpg' %}" alt="Unsplashed background img 1"> -->
+    <!-- </div> -->
+  </div>
+
+
+  
+  <footer class="page-footer #F5F3F3">
+   <div class="footer-copyright">
+    <div class="container">
+      <div class="right align">
+        Designed by ANIB
+      </div>
+    </div>
+  </div></footer>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+</body>
+</html>

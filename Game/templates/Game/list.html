@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+	{% load staticfiles %}
+	{% load static %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!--[if IE]>S
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<![endif]-->
+		<title>Game ON</title>
+		<!--REQUIRED STYLE SHEETS-->
+		<!-- BOOTSTRAP CORE STYLE CSS -->
+		<link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" />
+		<!-- FONTAWESOME STYLE CSS -->
+		<link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet" />
+		<!--ANIMATED FONTAWESOME STYLE CSS -->
+		<link href="{% static 'assets/css/font-awesome-animation.css' %}" rel="stylesheet" />
+		<!--PRETTYPHOTO MAIN STYLE -->
+		<link href="{% static 'assets/css/prettyPhoto.css' %}" rel="stylesheet" />
+		<!-- CUSTOM STYLE CSS -->
+		<link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+		<!-- GOOGLE FONT -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	  <![endif]-->
+
+  </head>
+  {% load static %}
+  <body >
+	<div id="wrapper">
+	   <!-- NAV SECTION -->
+	   <div id="header">
+		   <div class="navbar navbar-inverse navbar-fixed-top">
+
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand"> </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <!-- <ul class="nav navbar-nav navbar-left">
+                    <li><img src={% static 'images/img1.png' %}  height="100" width="141"></li>
+                </ul>-->
+                 <br>
+                    <ul class="valign-wrapper  nav navbar-nav navbar-right">
+                   
+                    <li><a href="/Login/signout">Log-Out</a></li>
+                </ul>
+            </div>
+           
+        </div>
+    </div>
+            </div>
+     <!--END NAV SECTION -->
+	
+	
+	<!--HOME SECTION-->
+	<div id="content1">
+		<div id="home-sec">
+
+
+			<div class="container"  >
+				{% for g in groups %}   
+				<div class = "row">  
+				<div class="col s12 m7">
+					<h2 class="header">{{g.Sport}} </h2>
+					
+					<div class="card horizontal">
+					  
+					<div class="card-stacked">
+						<div class="card-content">
+						  <p>{{g.Location}}
+						  		<br>
+						  		{{g.StartTime}} - {{g.EndTime}}
+							  <!-- The Raspberry Pi is a series of credit card-sized single-board computers developed in the United Kingdom by the Raspberry Pi Foundation to promote the teaching of basic computer science in schools and developing countries.-->
+							  </p> 
+						  </div>
+						  <div class="card-action">
+						  </div>
+						</div>
+						<p><a href = "/Game/update/?gi={{g.grpid}}">Join Group</a> </p>
+					</div>
+				</div>
+				</div>
+				{% endfor %}
+		  <form action="{% url 'Game:creategroup' %}" method="POST">
+		  {% csrf_token %}
+		  <input type="hidden" id = "sport" name="sport" value="{{sport}}">
+		  <input type="hidden" id = "city" name="city" value="{{city}}">
+		  <input type="hidden" id = "location" name="location" value="{{location}}">
+		  <input type="hidden" id= "starttime" name="starttime" value="{{starttime}}">
+		  <input type="hidden" id = "endtime" name="endtime" value="{{endtime}}">
+		  <input type="hidden" id = "u" name="u" value="{{u}}">
+		  <div class="row center">
+              <input type="submit" class=" btn green darken-4 thin-letters-3" value = "Create Group" style="color: #000000">
+            </div>
+            </form>
+            </div>
+        </div>
+			<br><br><br><br><br><br><br><br><br><br>
+		  <!--FOOTER SECTION -->
+		  <!-- <div id="footer">
+			<footer> 
+				<div id="footer">  
+					Developed by ANIB.
+
+				</div>
+			</footer>
+		</div> -->
+		<!-- END FOOTER SECTION -->
+		
+		<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+		<!-- CORE JQUERY  -->
+		<script src="{% static 'assets/plugins/jquery-1.10.2.js' %}"></script>
+		<!-- BOOTSTRAP CORE SCRIPT   -->
+		<script src="{% static 'assets/plugins/bootstrap.min.js' %}"></script>   
+		<!-- ISOTOPE SCRIPT   -->
+		<script src="{% static 'assets/plugins/jquery.isotope.min.js' %}"></script>
+		<!-- PRETTY PHOTO SCRIPT   -->
+		<script src="{% static 'assets/plugins/jquery.prettyPhoto.js' }"></script>    
+		<!-- CUSTOM SCRIPTS -->
+		<script src="{% static 'assets/js/custom.js' }"></script>
+
+	</div>
+</body>
+
+</html>

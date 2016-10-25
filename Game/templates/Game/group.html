@@ -1,0 +1,119 @@
+<head>
+    {% load staticfiles %}
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+        <title>Game ON </title>
+        <!--REQUIRED STYLE SHEETS-->
+        <!-- BOOTSTRAP CORE STYLE CSS -->
+        <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" />
+        <!-- FONTAWESOME STYLE CSS -->
+        <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet" />
+        <!--ANIMATED FONTAWESOME STYLE CSS -->
+        <link href="{% static 'assets/css/font-awesome-animation.css' %}" rel="stylesheet" />
+        <!--PRETTYPHOTO MAIN STYLE -->
+        <link href="{% static 'assets/css/prettyPhoto.css' %}" rel="stylesheet" />
+        <!-- CUSTOM STYLE CSS -->
+        <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+        <!-- GOOGLE FONT -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+
+  </head>
+  {% load static %}
+<body >
+    <div id="wrapper">
+         <!-- NAV SECTION -->
+        <div id="header">
+         <div class="navbar navbar-inverse navbar-fixed-top">
+       
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"> </a>
+            </div>
+            <div class="navbar-collapse collapse">
+<!--        
+ -->                <br>
+                    <ul class="valign-wrapper  nav navbar-nav navbar-right">
+                   
+                    <li><a href="/Login/signout">Log-Out</a></li>
+                </ul>
+            </div>
+           
+        </div>
+    </div>
+            </div>
+     <!--END NAV SECTION -->
+    
+    <!--HOME SECTION-->
+        <div id="content1">
+    <div id="home-sec">
+
+   
+    <div class="container"  >
+          
+<div class="col s12 m7"> 
+    <h2><center></center></h2>
+    </div> 
+    <div class =" text_content">
+      <p><h4 align="center">{{groups.Sport}}</h4>
+        <h4 align="center">{{groups.Location}}</h4>
+                                <br>
+                                <h4 align="center">{{groups.StartTime}} - {{groups.EndTime}}</h4>
+                            {% for u in users %}
+                                <h3> {{u.user.first_name}} </h3>
+                                {% endfor %}
+                              </p> 
+    <br>
+    <br>
+    <br>
+        
+        
+        </div>
+
+        
+            
+			
+    </div>
+        </div>
+        
+        <!--FOOTER SECTION -->
+    <!-- <div id="footer">
+            <footer> 
+      
+        Developed by ANIB.
+    </footer>
+        </div>
+     --><!-- END FOOTER SECTION -->
+        
+    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+    <!-- CORE JQUERY  -->
+    <script src="{% static 'assets/plugins/jquery-1.10.2.js' %}"></script>
+        <!-- BOOTSTRAP CORE SCRIPT   -->
+        <script src="{% static 'assets/plugins/bootstrap.min.js' %}"></script>   
+        <!-- ISOTOPE SCRIPT   -->
+        <script src="{% static 'assets/plugins/jquery.isotope.min.js' %}"></script>
+        <!-- PRETTY PHOTO SCRIPT   -->
+        <script src="{% static 'assets/plugins/jquery.prettyPhoto.js' }"></script>    
+        <!-- CUSTOM SCRIPTS -->
+        <script src="{% static 'assets/js/custom.js' }"></script>
+
+          
+    </div>
+</body>
+        
+</html>

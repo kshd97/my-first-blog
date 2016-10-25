@@ -1,0 +1,98 @@
+<head>
+	{% load staticfiles %}
+    {% load static %}
+	<!-- <script type="text/javascript" src="{% static 'css/materialize/js/jquery-1.11.1.min.js' %}"></script>
+  	<script type="text/javascript" src = "{% static 'css/materialize/js/materialize.min.js' %}"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/materialize/css/materialize.min.css' %}" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" /> 
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" /> -->
+  <script type="text/javascript" src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+    <script type="text/javascript" src = "{% static 'css/materialize/js/materialize.min.js' %}"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/materialize/css/materialize.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" /> 
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/materialize/css/style.css' %}" />
+</head>
+{% load static %}
+<body>
+  <nav class="navbar navbar-fixed-top #E91c1c rgba(238,28,28,1)" role="navigation"> 
+      <div class="container">
+         </div>
+ </nav>
+ <br>
+ <h2 align="center" style="color: #000000"> SIGNUP </h2>
+  <br><br>
+    <div class="row center">
+    <div class="row">
+    <form action="{% url 'Login:signup' %}" method="post" class="col s12">
+    	{% csrf_token %}
+      <div class="row">
+        <div class="input-field col s6">
+          <input name="first_name" id="first_name" type="text" class="" placeholder="First name" style="color: #000000">
+          
+        </div>
+        <div class="input-field col s6">
+          <input name="last_name" id="last_name" type="text" class="" placeholder="Last Name" style="color: #000000">
+        </div>
+        <div class="input-field col s12">
+          <input name = "username"id="username" type="text" class="" placeholder="Username" style="color: #000000">
+        </div>
+      </div>
+      <div class="row center-align">
+        <div class="input-field col s12">
+          <input name = "password" id="password" type="password" class="" placeholder="Password" style="color: #000000">
+        </div>
+      </div>
+      <div class="row center-align">
+        <div class="input-field col s12">
+          <input name = "re_password" id="re_password" type="password" class="" placeholder="Re-Type Password" style="color: #000000">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name = "email" id="email" type="email" class="" placeholder="E-mail" style="color: #000000">
+        </div>
+      </div>
+         <div class="row">
+        <div class="input-field col s12">
+          <input name  = "address" id="address" type="text" class="" placeholder="Address" style="color: #000000">
+        </div>
+      </div>
+         <div class="row">
+        <div class="input-field col s12">
+          <input name = "contact" id="contact" type="tel" class="" placeholder="Contact No" style="color: #000000">
+        </div>
+      </div>
+      <div class = "row">
+				<div class="input-field s6">
+					<input type="submit" class=" btn green darken-4 thin-letters-3" value = "Sign up">
+				</div>
+		</div>
+    </form>
+  </div>
+        
+      </div>
+    
+<footer class="page-footer">
+     <div class="footer-copyright">
+      <div class="container">
+          <div class="right-align">
+      Designed by ANIB
+          </div>
+      </div>
+    </div></footer>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'css/materialize/js/materialize.js' %}"></script>
+  <script src="{% static 'css/materialize/js/init.js' %}"></script>
+
+  </body>
+</html>
